@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 
+import { StatesAndMusicService } from '../states-and-music.service';
+
 export interface StateGroup {
   letter: string;
   names: string[];
@@ -89,7 +91,7 @@ export class StateSelectComponent implements OnInit {
 
   stateGroupOptions: Observable<StateGroup[]>;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private statesAndMusicService: StatesAndMusicService) { }
 
   ngOnInit() {
     this.stateGroupOptions = this.stateForm.get('stateGroup').valueChanges
@@ -109,8 +111,8 @@ export class StateSelectComponent implements OnInit {
     return this.stateGroups;
   }
 
-  setState(stateValue): void {
-    this.state = stateValue;
+  onSetState(stateValue): void {
+    this.statesAndMusicService.setState(stateValue);
   }
 
 }

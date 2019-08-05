@@ -10,11 +10,13 @@ import { StateSelectComponent } from './state-select/state-select.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
+import { CountySelectComponent } from './county-select/county-select.component'
 @NgModule({
   declarations: [
     AppComponent,
-    StateSelectComponent
+    StateSelectComponent,
+    CountySelectComponent
   ],
   imports: [
     BrowserModule,
