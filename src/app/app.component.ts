@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StatesAndMusicService } from './states-and-music.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'reps-n-music';
+  constructor(private statesAndMusicService: StatesAndMusicService) { }
+
+  showCountySelect(): boolean {
+    return this.statesAndMusicService.isValidState();
+  }
 }
