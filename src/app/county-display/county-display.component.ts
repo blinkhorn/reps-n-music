@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './county-display.component.html',
   styleUrls: ['./county-display.component.css']
 })
-export class CountyDisplayComponent implements OnInit {
+export class CountyDisplayComponent implements OnInit, OnDestroy {
 
   countyName: string;
   private sub: any;
