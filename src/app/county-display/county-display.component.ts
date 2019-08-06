@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-county-display',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountyDisplayComponent implements OnInit {
 
-  constructor() { }
+  countyName: string;
+  private sub: any;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.sub = this.route.params.subscribe( params => {
+      this.countyName = params.id;
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
 }
