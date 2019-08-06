@@ -94,6 +94,8 @@ export class StateSelectComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private statesAndMusicService: StatesAndMusicService) { }
 
   ngOnInit() {
+    this.statesAndMusicService.setState('');
+
     this.stateGroupOptions = this.stateForm.get('stateGroup').valueChanges
       .pipe(
         startWith(''),
