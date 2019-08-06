@@ -10,7 +10,6 @@ import { StatesAndMusicService } from '../states-and-music.service';
 export class CountySelectComponent implements OnInit {
 
   constructor(private statesAndMusicService: StatesAndMusicService) { }
-  stateCounties: string[];
 
   ngOnInit() {}
 

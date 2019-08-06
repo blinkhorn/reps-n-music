@@ -15,12 +15,18 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CountyDisplayComponent } from './county-display/county-display.component';
+import { CountyCompareComponent } from './county-compare/county-compare.component';
+import { CountyCompareSelectComponent } from './county-compare-select/county-compare-select.component';
+import { CountyCompareDisplayComponent } from './county-compare-display/county-compare-display.component';
 @NgModule({
   declarations: [
     AppComponent,
     StateSelectComponent,
     CountySelectComponent,
-    CountyDisplayComponent
+    CountyDisplayComponent,
+    CountyCompareComponent,
+    CountyCompareSelectComponent,
+    CountyCompareDisplayComponent
   ],
   imports: [
     BrowserModule,
