@@ -81,6 +81,34 @@ export class StatesAndMusicService {
   }
 
   getTooltipInfo(county: string): string {
-    return `${this.counties[county].fullName}, ${this.counties[county].raceRatingSegment}`;
+    return `${this.getFullName(county)}, ${this.counties[county].raceRatingSegment}`;
+  }
+
+  getFullName(county: string): string {
+    return this.counties[county].fullName;
+  }
+
+  getParty(county: string): string {
+    return this.counties[county].party;
+  }
+
+  getRaceRatingID(county: string): string {
+    return this.counties[county].raceRatingID;
+  }
+
+  getRatingPhrase(county: string): string {
+    return this.counties[county].ratingPhrase;
+  }
+
+  getOpenSeat(county: string): string {
+    return this.counties[county].open_seat;
+  }
+
+  getTurnover(county: string): string {
+    return this.counties[county].turnover;
+  }
+
+  getTrumpMargin(county: string): string {
+    return this.counties[county].trump_margin;
   }
 }
