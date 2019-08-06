@@ -1,3 +1,9 @@
 <div class="button-group" *ngFor="let county of getStateCounties(getState())">
-  <button mat-button>{{ county }}</button>
+  <button
+    mat-button
+    matTooltip={{getTooltipInfo(county)}}
+    [matTooltipPosition]="'right'"
+  >
+    {{ county }}
+  </button>
 </div>

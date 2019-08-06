@@ -73,10 +73,13 @@ export class CountySelectComponent implements OnInit {
     return this.statesAndMusicService.getState();
   }
 
-  getStateCounties(state: string) {
+  getStateCounties(state: string): string[] {
     const countiesArr = Object.keys(this.counties);
     return countiesArr.filter(item => item.substring(0, 2) === this.statesHash[state]);
   }
 
+  getTooltipInfo(county: string): string {
+    return `${this.counties[county].fullName}, ${this.counties[county].raceRatingSegment}`;
+  }
 
 }
