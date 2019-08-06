@@ -14,11 +14,13 @@ import { MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CountyDisplayComponent } from './county-display/county-display.component';
 @NgModule({
   declarations: [
     AppComponent,
     StateSelectComponent,
-    CountySelectComponent
+    CountySelectComponent,
+    CountyDisplayComponent
   ],
   imports: [
     BrowserModule,

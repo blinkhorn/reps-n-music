@@ -3,6 +3,7 @@
     mat-button
     matTooltip={{getTooltipInfo(county)}}
     [matTooltipPosition]="'right'"
+    [routerLink]="['seat-id', county]"
   >
     {{ county }}
   </button>

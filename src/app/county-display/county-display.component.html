@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title>Seat ID: {{ countyName }}</mat-card-title>
+  <mat-card-content>
+    <p>Full Name: {{ getFullName(countyName) }}</p>
+    <p>Party: {{ getParty(countyName) }}</p>
+    <p>Race Rating ID: {{ getRaceRatingID(countyName) }}</p>
+    <p>Rating Phrase: {{ getRatingPhrase(countyName) }}</p>
+    <p>Race Rating Segment: {{ getRaceRatingSegment(countyName) }}</p>
+    <p>Open Seat: {{ getOpenSeat(countyName) }}</p>
+    <p>Turnover: {{ getTurnover(countyName) }}</p>
+    <p>Trump Margin: {{ getTrumpMargin(countyName) }}</p>
+  </mat-card-content>
+  <button
+    mat-raised-button
+    color="primary"
+    [routerLink]="['']">
+    Select New Seat
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    [routerLink]="['compare', countyName]">
+    Compare Seat
+  </button>
+</mat-card>
