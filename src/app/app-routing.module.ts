@@ -6,7 +6,7 @@ import { CountyDisplayComponent } from './county-display/county-display.componen
 
 const routes: Routes = [
     { path: '', component: StateSelectComponent },
-    { path: 'county/:id', component: CountyDisplayComponent }
+    { path: 'seat-id/:id', component: CountyDisplayComponent }
 ];
 
 @NgModule({

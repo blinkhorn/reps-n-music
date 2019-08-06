@@ -81,7 +81,7 @@ export class StatesAndMusicService {
   }
 
   getTooltipInfo(county: string): string {
-    return `${this.getFullName(county)}, ${this.counties[county].raceRatingSegment}`;
+    return `${this.getFullName(county)}, ${this.getRaceRatingSegment(county)}`;
   }
 
   getFullName(county: string): string {
@@ -98,6 +98,10 @@ export class StatesAndMusicService {
 
   getRatingPhrase(county: string): string {
     return this.counties[county].ratingPhrase;
+  }
+
+  getRaceRatingSegment(county: string): string {
+    return this.counties[county].raceRatingSegment.replace(/-/g,' ');
   }
 
   getOpenSeat(county: string): string {

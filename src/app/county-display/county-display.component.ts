@@ -36,6 +36,10 @@ export class CountyDisplayComponent implements OnInit, OnDestroy {
     return this.statesAndMusicService.getRatingPhrase(county);
   }
 
+  getRaceRatingSegment(county: string): string {
+    return this.statesAndMusicService.getRaceRatingSegment(county);
+  }
+
   getOpenSeat(county: string): string {
     return this.statesAndMusicService.getOpenSeat(county);
   }
