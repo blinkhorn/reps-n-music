@@ -56,4 +56,7 @@ export class CountyDisplayComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
+  getState() {
+    return this.statesAndMusicService.getState();
+  }
 }

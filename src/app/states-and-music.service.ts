@@ -71,7 +71,6 @@ export class StatesAndMusicService {
   }
 
   isValidState(): boolean {
-    // return this.states.includes(this.getState());
     return Object.keys(this.statesHash).includes(this.getState());
   }
 
@@ -114,5 +113,9 @@ export class StatesAndMusicService {
 
   getTrumpMargin(county: string): string {
     return this.counties[county].trump_margin;
+  }
+
+  getCountyState(county: string): string {
+    return this.counties[county].state;
   }
 }
