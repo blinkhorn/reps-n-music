@@ -10,7 +10,7 @@ export interface StateGroup {
   names: string[];
 }
 
-export const _filter = (opt: string[], value: string): string[] => {
+export const filterArr = (opt: string[], value: string): string[] => {
   const filterValue = value.toLowerCase();
 
   return opt.filter(item => item.toLowerCase().indexOf(filterValue) === 0);
@@ -97,14 +97,14 @@ export class StateSelectComponent implements OnInit {
     this.stateGroupOptions = this.stateForm.get('stateGroup').valueChanges
       .pipe(
         startWith(''),
-        map(value => this._filterGroup(value))
+        map(value => this.filterGroup(value))
       );
   }
 
-  private _filterGroup(value: string): StateGroup[] {
+  private filterGroup(value: string): StateGroup[] {
     if (value) {
       return this.stateGroups
-        .map(group => ({ letter: group.letter, names: _filter(group.names, value) }))
+        .map(group => ({ letter: group.letter, names: filterArr(group.names, value) }))
         .filter(group => group.names.length > 0);
     }
 
@@ -113,6 +113,10 @@ export class StateSelectComponent implements OnInit {
 
   onSetState(stateValue): void {
     this.statesAndMusicService.setState(stateValue);
+  }
+
+  showCountySelect(): boolean {
+    return this.statesAndMusicService.isValidState();
   }
 
 }

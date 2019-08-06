@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+
 import countyData from '../../assets/data.json';
-import { type } from 'os';
+import { StatesAndMusicService } from '../states-and-music.service';
 @Component({
   selector: 'app-county-select',
   templateUrl: './county-select.component.html',
   styleUrls: ['./county-select.component.css']
 })
 export class CountySelectComponent implements OnInit {
+
+
   statesHash = {
     Alabama: 'AL',
     Alaska: 'AK',
@@ -61,11 +64,19 @@ export class CountySelectComponent implements OnInit {
   };
 
   counties = countyData;
-  constructor() {}
+  constructor(private statesAndMusicService: StatesAndMusicService) { }
+  stateCounties: string[];
 
   ngOnInit() {}
-  tcase() {
-    const countiesArr = Object.keys(this.counties);
-    return countiesArr.filter(item => item.substring(0, 2) === 'AL');
+
+  getState(): string {
+    return this.statesAndMusicService.getState();
   }
+
+  getStateCounties(state: string) {
+    const countiesArr = Object.keys(this.counties);
+    return countiesArr.filter(item => item.substring(0, 2) === this.statesHash[state]);
+  }
+
+
 }
