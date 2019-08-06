@@ -1,1 +1,9 @@
-<p>county-select works!</p>
+<div class="button-group" *ngFor="let county of getStateCounties(getState())">
+  <button
+    mat-button
+    matTooltip={{getTooltipInfo(county)}}
+    [matTooltipPosition]="'right'"
+  >
+    {{ county }}
+  </button>
+</div>
