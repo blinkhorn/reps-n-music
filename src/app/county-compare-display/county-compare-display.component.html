@@ -1,46 +1,50 @@
-<mat-card>
-  <button mat-raised-button color="primary" class="new-state-select" [routerLink]="['/']">
-    Select New Seat
-  </button>
-  <br>
-  <mat-divider></mat-divider>
-  <br>
-  <mat-card-title>Seat ID: {{ firstCountyName }}</mat-card-title>
-  <mat-card-content>
-    <p>Full Name: {{ getFullName(firstCountyName) }}</p>
-    <p>Party: {{ getParty(firstCountyName) }}</p>
-    <p>Race Rating ID: {{ getRaceRatingID(firstCountyName) }}</p>
-    <p>Rating Phrase: {{ getRatingPhrase(firstCountyName) }}</p>
-    <p>Race Rating Segment: {{ getRaceRatingSegment(firstCountyName) }}</p>
-    <p>Open Seat: {{ getOpenSeat(firstCountyName) }}</p>
-    <p>Turnover: {{ getTurnover(firstCountyName) }}</p>
-    <p>Trump Margin: {{ getTrumpMargin(firstCountyName) }}</p>
-  </mat-card-content>
-  <button
-    mat-raised-button
-    color="accent"
-    (click)="onClickMusic(revStatesHash[getState(firstCountyName)])"
-  >
-    {{ revStatesHash[getState(firstCountyName)] }} Music!
-  </button>
-</mat-card>
-<mat-card>
-  <mat-card-title>Seat ID: {{ secondCountyName }}</mat-card-title>
-  <mat-card-content>
-    <p>Full Name: {{ getFullName(secondCountyName) }}</p>
-    <p>Party: {{ getParty(secondCountyName) }}</p>
-    <p>Race Rating ID: {{ getRaceRatingID(secondCountyName) }}</p>
-    <p>Rating Phrase: {{ getRatingPhrase(secondCountyName) }}</p>
-    <p>Race Rating Segment: {{ getRaceRatingSegment(secondCountyName) }}</p>
-    <p>Open Seat: {{ getOpenSeat(secondCountyName) }}</p>
-    <p>Turnover: {{ getTurnover(secondCountyName) }}</p>
-    <p>Trump Margin: {{ getTrumpMargin(secondCountyName) }}</p>
-  </mat-card-content>
-  <button
-    mat-raised-button
-    color="accent"
-    (click)="onClickMusic(revStatesHash[getState(secondCountyName)])"
-  >
-    {{ revStatesHash[getState(secondCountyName)] }} Music!
-  </button>
-</mat-card>
+<button
+  mat-raised-button
+  color="primary"
+  class="new-state-select"
+  [routerLink]="['/']"
+>
+  Select New Seat
+</button>
+<div class="cards">
+  <mat-card>
+    <mat-card-title>Seat ID: {{ firstCountyName }}</mat-card-title>
+    <mat-card-content>
+      <p>Full Name: {{ getFullName(firstCountyName) }}</p>
+      <p>Party: {{ getParty(firstCountyName) }}</p>
+      <p>Race Rating ID: {{ getRaceRatingID(firstCountyName) }}</p>
+      <p>Rating Phrase: {{ getRatingPhrase(firstCountyName) }}</p>
+      <p>Race Rating Segment: {{ getRaceRatingSegment(firstCountyName) }}</p>
+      <p>Open Seat: {{ getOpenSeat(firstCountyName) }}</p>
+      <p>Turnover: {{ getTurnover(firstCountyName) }}</p>
+      <p>Trump Margin: {{ getTrumpMargin(firstCountyName) }}</p>
+    </mat-card-content>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="onClickMusic(revStatesHash[getState(firstCountyName)])"
+    >
+      {{ revStatesHash[getState(firstCountyName)] }} Music!
+    </button>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Seat ID: {{ secondCountyName }}</mat-card-title>
+    <mat-card-content>
+      <p>Full Name: {{ getFullName(secondCountyName) }}</p>
+      <p>Party: {{ getParty(secondCountyName) }}</p>
+      <p>Race Rating ID: {{ getRaceRatingID(secondCountyName) }}</p>
+      <p>Rating Phrase: {{ getRatingPhrase(secondCountyName) }}</p>
+      <p>Race Rating Segment: {{ getRaceRatingSegment(secondCountyName) }}</p>
+      <p>Open Seat: {{ getOpenSeat(secondCountyName) }}</p>
+      <p>Turnover: {{ getTurnover(secondCountyName) }}</p>
+      <p>Trump Margin: {{ getTrumpMargin(secondCountyName) }}</p>
+    </mat-card-content>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="onClickMusic(revStatesHash[getState(secondCountyName)])"
+    >
+      {{ revStatesHash[getState(secondCountyName)] }} Music!
+    </button>
+  </mat-card>
+</div>

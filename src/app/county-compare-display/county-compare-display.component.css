@@ -1,3 +1,7 @@
 .new-state-select {
-  bottom: 0.5rem;
+  margin: 1rem;
+}
+.cards, .wrapper {
+  display: flex;
+  justify-content: center;
 }
