@@ -1,0 +1,7 @@
+.new-state-select {
+  margin: 1rem;
+}
+.cards, .wrapper {
+  display: flex;
+  justify-content: center;
+}
