@@ -1,0 +1,13 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "project": "reps-n-music",
+    "skipInstall": false,
+    "directory": ".",
+    "clientProject": "reps-n-music",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}
