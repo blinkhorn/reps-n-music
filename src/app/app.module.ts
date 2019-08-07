@@ -19,6 +19,7 @@ import { CountyCompareComponent } from './county-compare/county-compare.componen
 import { CountyCompareSelectComponent } from './county-compare-select/county-compare-select.component';
 import { CountyCompareDisplayComponent } from './county-compare-display/county-compare-display.component';
 import { GeneratePlaylistComponent } from './generate-playlist/generate-playlist.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { GeneratePlaylistComponent } from './generate-playlist/generate-playlist
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
