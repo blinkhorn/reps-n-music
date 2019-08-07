@@ -1,10 +1,14 @@
-# Musical Chairs
+# Musical Chairs: U.S. House Seats and Music (FKA reps-n-music)
+
+This application allows you to view data about U.S. State Representatives, compare U.S. data about Respresentatives, and access a Spotify playlist from that representitives state.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
+Please view the live application here: https://bloncsq9w1.execute-api.eu-central-1.amazonaws.com/production/
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone down the repository an pull down the pre-deploy branch. On that branch, you can run `npm i` and the `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
