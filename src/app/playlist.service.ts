@@ -17,7 +17,7 @@ export class PlaylistService {
   constructor(private http: HttpClient) {}
 
   authSpotifyUser(state: string): void {
-    this.redirectURI += state; // redirect back to specific state
+    this.redirectURI += encodeURIComponent(state); // redirect back to specific state
     this.authURL += '?response_type=token';
     this.authURL += `&client_id=${encodeURIComponent(this.myKey)}`;
     this.authURL += `&scope=${encodeURIComponent(this.scope)}`;
