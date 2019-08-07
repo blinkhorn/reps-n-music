@@ -1,6 +1,6 @@
 # Musical Chairs: U.S. House Seats and Music (FKA reps-n-music)
 
-This application allows you to view data about U.S. State Representatives, compare U.S. data about Respresentatives, and access a Spotify playlist from that representitives state.
+This application allows you to view data about U.S. State Representatives, compare data about different U.S. Respresentatives, and access a Spotify playlist from that their state.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
