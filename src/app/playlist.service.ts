@@ -12,7 +12,7 @@ export class PlaylistService {
   searchUrl = 'https://api.spotify.com/v1/search';
   myKey = 'cd1e9a4fbc0047d49b737d62370e3c5e';
   scope = 'playlist-modify-public playlist-modify-private user-read-private';
-  redirectURI = 'http://localhost:4200/playlist/';
+  redirectURI = 'https://bloncsq9w1.execute-api.eu-central-1.amazonaws.com/production/playlist/';
 
   constructor(private http: HttpClient) {}
 
