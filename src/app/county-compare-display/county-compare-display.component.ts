@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { StatesAndMusicService } from '../states-and-music.service';
+import { PlaylistService } from '../playlist.service';
 
 @Component({
   selector: 'app-county-compare-display',
@@ -10,7 +11,6 @@ import { StatesAndMusicService } from '../states-and-music.service';
   styleUrls: ['./county-compare-display.component.css']
 })
 export class CountyCompareDisplayComponent implements OnInit, OnDestroy {
-
   firstCountyName: string;
   secondCountyName: string;
   private sub: any;
@@ -68,10 +68,14 @@ export class CountyCompareDisplayComponent implements OnInit, OnDestroy {
     WY: 'Wyoming'
   };
 
-  constructor(private route: ActivatedRoute, private statesAndMusicService: StatesAndMusicService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private statesAndMusicService: StatesAndMusicService,
+    private playlistService: PlaylistService
+  ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe( params => {
+    this.sub = this.route.params.subscribe(params => {
       this.firstCountyName = params.firstCounty;
       this.secondCountyName = params.secondCounty;
     });
@@ -113,8 +117,11 @@ export class CountyCompareDisplayComponent implements OnInit, OnDestroy {
     return this.statesAndMusicService.getCountyState(county);
   }
 
+  onClickMusic(state: string): void {
+    this.playlistService.authSpotifyUser(state);
+  }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
 }

@@ -25,7 +25,7 @@
   <button
     mat-raised-button
     color="accent"
-    [routerLink]="['/playlist', getState()]">
+    (click)="onClickMusic()">
     {{getState()}} Music!
   </button>
 </mat-card>
