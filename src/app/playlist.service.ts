@@ -33,7 +33,6 @@ export class PlaylistService {
     };
     const playlistName = `Get vocal, ${state}!`;
     this.searchUrl += `?q=${encodeURIComponent(playlistName)}&type=playlist`;
-    console.log(this.http.get(this.searchUrl, httpOptions))
     return this.http.get(this.searchUrl, httpOptions);
   }
 
