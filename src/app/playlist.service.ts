@@ -35,12 +35,4 @@ export class PlaylistService {
     this.searchUrl += `?q=${encodeURIComponent(playlistName)}&type=playlist`;
     return this.http.get(this.searchUrl, httpOptions);
   }
-
-  setPlaylistID(playlistID: string) {
-    this.playlistID = playlistID;
-  }
-
-  getPlaylistID(): any {
-    return this.playlistID;
-  }
 }
