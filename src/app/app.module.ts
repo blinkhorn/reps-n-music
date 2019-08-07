@@ -10,7 +10,7 @@ import { CountySelectComponent } from './county-select/county-select.component';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatToolbarModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -20,6 +20,7 @@ import { CountyCompareSelectComponent } from './county-compare-select/county-com
 import { CountyCompareDisplayComponent } from './county-compare-display/county-compare-display.component';
 import { GeneratePlaylistComponent } from './generate-playlist/generate-playlist.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     CountyCompareComponent,
     CountyCompareSelectComponent,
     CountyCompareDisplayComponent,
-    GeneratePlaylistComponent
+    GeneratePlaylistComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatButtonModule,
     MatTooltipModule,
+    MatToolbarModule,
     HttpClientModule
   ],
   providers: [],

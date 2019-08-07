@@ -1,0 +1,8 @@
+.app-title {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.app-title, .brand {
+  font-weight: 700;
+}
