@@ -12,14 +12,20 @@
   </mat-card-content>
   <button
     mat-raised-button
-    color="primary"
+    color="basic"
     [routerLink]="['']">
     Select New Seat
   </button>
   <button
     mat-raised-button
-    color="accent"
+    color="primary"
     [routerLink]="['/compare', countyName]">
     Compare Seat
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="onClickMusic()">
+    {{getState()}} Music!
   </button>
 </mat-card>

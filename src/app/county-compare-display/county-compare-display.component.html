@@ -10,6 +10,12 @@
     <p>Turnover: {{ getTurnover(firstCountyName) }}</p>
     <p>Trump Margin: {{ getTrumpMargin(firstCountyName) }}</p>
   </mat-card-content>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="onClickMusic(revStatesHash[getState(firstCountyName)])">
+    {{revStatesHash[getState(firstCountyName)]}} Music!
+  </button>
 </mat-card>
 <mat-card>
   <mat-card-title>Seat ID: {{ secondCountyName }}</mat-card-title>
@@ -23,6 +29,12 @@
     <p>Turnover: {{ getTurnover(secondCountyName) }}</p>
     <p>Trump Margin: {{ getTrumpMargin(secondCountyName) }}</p>
   </mat-card-content>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="onClickMusic(revStatesHash[getState(secondCountyName)])">
+    {{revStatesHash[getState(secondCountyName)]}} Music!
+  </button>
 </mat-card>
 <button mat-raised-button color="primary" [routerLink]="['/']">
   Select New Seat
