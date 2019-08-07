@@ -1,4 +1,10 @@
 <mat-card>
+  <button mat-raised-button color="primary" class="new-state-select" [routerLink]="['/']">
+    Select New Seat
+  </button>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
   <mat-card-title>Seat ID: {{ firstCountyName }}</mat-card-title>
   <mat-card-content>
     <p>Full Name: {{ getFullName(firstCountyName) }}</p>
@@ -13,8 +19,9 @@
   <button
     mat-raised-button
     color="accent"
-    (click)="onClickMusic(revStatesHash[getState(firstCountyName)])">
-    {{revStatesHash[getState(firstCountyName)]}} Music!
+    (click)="onClickMusic(revStatesHash[getState(firstCountyName)])"
+  >
+    {{ revStatesHash[getState(firstCountyName)] }} Music!
   </button>
 </mat-card>
 <mat-card>
@@ -32,10 +39,8 @@
   <button
     mat-raised-button
     color="accent"
-    (click)="onClickMusic(revStatesHash[getState(secondCountyName)])">
-    {{revStatesHash[getState(secondCountyName)]}} Music!
+    (click)="onClickMusic(revStatesHash[getState(secondCountyName)])"
+  >
+    {{ revStatesHash[getState(secondCountyName)] }} Music!
   </button>
 </mat-card>
-<button mat-raised-button color="primary" [routerLink]="['/']">
-  Select New Seat
-</button>
