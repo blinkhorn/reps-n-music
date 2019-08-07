@@ -18,6 +18,7 @@ import { CountyDisplayComponent } from './county-display/county-display.componen
 import { CountyCompareComponent } from './county-compare/county-compare.component';
 import { CountyCompareSelectComponent } from './county-compare-select/county-compare-select.component';
 import { CountyCompareDisplayComponent } from './county-compare-display/county-compare-display.component';
+import { GeneratePlaylistComponent } from './generate-playlist/generate-playlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { CountyCompareDisplayComponent } from './county-compare-display/county-c
     CountyDisplayComponent,
     CountyCompareComponent,
     CountyCompareSelectComponent,
-    CountyCompareDisplayComponent
+    CountyCompareDisplayComponent,
+    GeneratePlaylistComponent
   ],
   imports: [
     BrowserModule,

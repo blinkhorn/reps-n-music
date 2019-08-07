@@ -52,11 +52,12 @@ export class CountyDisplayComponent implements OnInit, OnDestroy {
     return this.statesAndMusicService.getTrumpMargin(county);
   }
 
+  getState() {
+    return this.statesAndMusicService.getState();
+  }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
-  getState() {
-    return this.statesAndMusicService.getState();
-  }
 }
