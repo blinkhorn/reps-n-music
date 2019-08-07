@@ -10,11 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./generate-playlist.component.css']
 })
 export class GeneratePlaylistComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
-  data: any;
-  errorMessage: any;
   stateName: string;
-  playlistObj = {};
   private sub: Subscription;
   constructor(
     private route: ActivatedRoute,
