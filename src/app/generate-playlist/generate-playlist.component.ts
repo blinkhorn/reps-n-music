@@ -10,8 +10,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./generate-playlist.component.css']
 })
 export class GeneratePlaylistComponent implements OnInit, OnDestroy {
-  stateName: string;
+
+  private stateName: string;
   private sub = new Subscription();
+
   constructor(
     private route: ActivatedRoute,
     private playlistService: PlaylistService
@@ -38,6 +40,10 @@ export class GeneratePlaylistComponent implements OnInit, OnDestroy {
     const regex = /([^&;=]+)=?([^&;]*)/g; // isolate sections of params separated by '='
     const totalParams = window.location.hash.substring(1); // get rid of hash from params
     return regex.exec(totalParams)[2];
+  }
+
+  getStateName(): string {
+    return this.stateName;
   }
 
   ngOnDestroy() {
