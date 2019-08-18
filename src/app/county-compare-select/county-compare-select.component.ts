@@ -9,8 +9,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./county-compare-select.component.css']
 })
 export class CountyCompareSelectComponent implements OnInit, OnDestroy {
+
   private previousCountyName: string;
   private sub = new Subscription();
+
   constructor(
     private route: ActivatedRoute,
     private statesAndMusicService: StatesAndMusicService
