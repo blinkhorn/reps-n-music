@@ -9,4 +9,15 @@
       {{ county }}
     </button>
   </div>
+
+  <!-- <form class="county-form">
+      <mat-form-field class="county-full-width">
+        <input type="text" placeholder="Pick a county" aria-label="County" matInput [formControl]="getCountyControl()" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let county of getFilteredCountyOptions() | async" [value]="county">
+              <a [routerLink]="['seat-id', county]">{{county}}</a>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form> -->
 </mat-card>
