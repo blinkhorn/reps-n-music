@@ -9,6 +9,12 @@
 
 .app-title, .brand {
   font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.brand {
+  cursor: pointer;
 }
 
 .mat-toolbar {
