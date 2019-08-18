@@ -8,43 +8,43 @@
 </button>
 <div class="cards">
   <mat-card>
-    <mat-card-title>Seat ID: {{ firstCountyName }}</mat-card-title>
+    <mat-card-title>Seat ID: {{ getFirstCountyName() }}</mat-card-title>
     <mat-card-content>
-      <p>Full Name: {{ getFullName(firstCountyName) }}</p>
-      <p>Party: {{ getParty(firstCountyName) }}</p>
-      <p>Race Rating ID: {{ getRaceRatingID(firstCountyName) }}</p>
-      <p>Rating Phrase: {{ getRatingPhrase(firstCountyName) }}</p>
-      <p>Race Rating Segment: {{ getRaceRatingSegment(firstCountyName) }}</p>
-      <p>Open Seat: {{ getOpenSeat(firstCountyName) }}</p>
-      <p>Turnover: {{ getTurnover(firstCountyName) }}</p>
-      <p>Trump Margin: {{ getTrumpMargin(firstCountyName) }}</p>
+      <p>Full Name: {{ getFullName(getFirstCountyName()) }}</p>
+      <p>Party: {{ getParty(getFirstCountyName()) }}</p>
+      <p>Race Rating ID: {{ getRaceRatingID(getFirstCountyName()) }}</p>
+      <p>Rating Phrase: {{ getRatingPhrase(getFirstCountyName()) }}</p>
+      <p>Race Rating Segment: {{ getRaceRatingSegment(getFirstCountyName()) }}</p>
+      <p>Open Seat: {{ getOpenSeat(getFirstCountyName()) }}</p>
+      <p>Turnover: {{ getTurnover(getFirstCountyName()) }}</p>
+      <p>Trump Margin: {{ getTrumpMargin(getFirstCountyName()) }}</p>
     </mat-card-content>
     <button
       mat-raised-button
       color="accent"
-      (click)="onClickMusic(revStatesHash[getState(firstCountyName)])"
+      (click)="onClickMusic(getRevStatesHash()[getState(getFirstCountyName())])"
     >
-      {{ revStatesHash[getState(firstCountyName)] }} Music!
+      {{ getRevStatesHash()[getState(getFirstCountyName())] }} Music!
     </button>
   </mat-card>
   <mat-card>
-    <mat-card-title>Seat ID: {{ secondCountyName }}</mat-card-title>
+    <mat-card-title>Seat ID: {{ getSecondCountyName() }}</mat-card-title>
     <mat-card-content>
-      <p>Full Name: {{ getFullName(secondCountyName) }}</p>
-      <p>Party: {{ getParty(secondCountyName) }}</p>
-      <p>Race Rating ID: {{ getRaceRatingID(secondCountyName) }}</p>
-      <p>Rating Phrase: {{ getRatingPhrase(secondCountyName) }}</p>
-      <p>Race Rating Segment: {{ getRaceRatingSegment(secondCountyName) }}</p>
-      <p>Open Seat: {{ getOpenSeat(secondCountyName) }}</p>
-      <p>Turnover: {{ getTurnover(secondCountyName) }}</p>
-      <p>Trump Margin: {{ getTrumpMargin(secondCountyName) }}</p>
+      <p>Full Name: {{ getFullName(getSecondCountyName()) }}</p>
+      <p>Party: {{ getParty(getSecondCountyName()) }}</p>
+      <p>Race Rating ID: {{ getRaceRatingID(getSecondCountyName()) }}</p>
+      <p>Rating Phrase: {{ getRatingPhrase(getSecondCountyName()) }}</p>
+      <p>Race Rating Segment: {{ getRaceRatingSegment(getSecondCountyName()) }}</p>
+      <p>Open Seat: {{ getOpenSeat(getSecondCountyName()) }}</p>
+      <p>Turnover: {{ getTurnover(getSecondCountyName()) }}</p>
+      <p>Trump Margin: {{ getTrumpMargin(getSecondCountyName()) }}</p>
     </mat-card-content>
     <button
       mat-raised-button
       color="accent"
-      (click)="onClickMusic(revStatesHash[getState(secondCountyName)])"
+      (click)="onClickMusic(getRevStatesHash()[getState(getSecondCountyName())])"
     >
-      {{ revStatesHash[getState(secondCountyName)] }} Music!
+      {{ getRevStatesHash()[getState(getSecondCountyName())] }} Music!
     </button>
   </mat-card>
 </div>

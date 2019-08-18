@@ -128,7 +128,7 @@ export class StatesAndMusicService {
   }
 
   groupByFirstLetter(): StateGroup[] {
-    const stateGroup: StateGroup[] = [{letter: '', names: [] }];
+    const stateGroup: StateGroup[] = [{ letter: '', names: [] }];
     Object.keys(this.statesHash).forEach(k => {
       const i = k.toString().substring(0, 1);
       if (stateGroup[i]) {
@@ -142,5 +142,14 @@ export class StatesAndMusicService {
       letter: k,
       names: stateGroup[k]
     }));
+  }
+
+  reverseStatesHash(): object {
+    const revHash = {};
+    Object.keys(this.statesHash).forEach(k => {
+      const value = this.statesHash[k];
+      revHash[value] = k;
+    });
+    return revHash;
   }
 }
