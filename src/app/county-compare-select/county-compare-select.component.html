@@ -3,7 +3,7 @@
       mat-button
       matTooltip={{getTooltipInfo(county)}}
       [matTooltipPosition]="'right'"
-      [routerLink]="['/compare', previousCountyName, county]"
+      [routerLink]="['/compare', getPreviousCountyName(), county]"
     >
       {{ county }}
     </button>
