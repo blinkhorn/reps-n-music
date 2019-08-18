@@ -62,7 +62,8 @@ export class CountyDisplayComponent implements OnInit, OnDestroy {
   }
 
   getState(): string {
-    return this.statesAndMusicService.getState();
+    const stateCode = this.countyName.substring(0, 2);
+    return this.statesAndMusicService.reverseStatesHash()[stateCode];
   }
 
   onClickMusic(): void {
