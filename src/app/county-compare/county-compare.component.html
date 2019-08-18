@@ -1,5 +1,5 @@
 <mat-card>
-    <form [formGroup]="stateForm">
+    <form [formGroup]="getStateForm()">
       <mat-form-field>
         <input
           type="text"
@@ -14,7 +14,7 @@
           (optionSelected)="onSetState($event.option.value)"
         >
           <mat-optgroup
-            *ngFor="let group of stateGroupOptions | async"
+            *ngFor="let group of getStateGroupOptions() | async"
             [label]="group.letter"
           >
             <mat-option *ngFor="let name of group.names" [value]="name">
