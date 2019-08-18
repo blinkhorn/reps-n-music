@@ -22,15 +22,14 @@ export const filterArr = (opt: string[], value: string): string[] => {
   styleUrls: ['./state-select.component.css']
 })
 export class StateSelectComponent implements OnInit {
-  state: string;
 
-  stateForm: FormGroup = this.formBuilder.group({
+  private stateForm: FormGroup = this.formBuilder.group({
     stateGroup: '',
   });
 
-  stateGroups: StateGroup[];
+  private stateGroups: StateGroup[];
 
-  stateGroupOptions: Observable<StateGroup[]>;
+  private stateGroupOptions: Observable<StateGroup[]>;
 
   constructor(private formBuilder: FormBuilder, private statesAndMusicService: StatesAndMusicService) {}
 
@@ -63,4 +62,11 @@ export class StateSelectComponent implements OnInit {
     return this.statesAndMusicService.isValidState();
   }
 
+  getStateGroupOptions(): Observable<StateGroup[]> {
+    return this.stateGroupOptions;
+  }
+
+  getStateForm(): FormGroup {
+    return this.stateForm;
+  }
 }
