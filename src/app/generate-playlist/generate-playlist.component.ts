@@ -18,16 +18,20 @@ export class GeneratePlaylistComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.sub.add(this.route.params.subscribe(params => {
-      this.stateName = params.state;
-    }));
+    this.sub.add(
+      this.route.params.subscribe(params => {
+        this.stateName = params.state;
+      })
+    );
 
-    this.sub.add(this.playlistService
-      .getPlaylist(this.stateName, this.getToken())
-      .subscribe(res => {
-        const playlistId = res.playlists.items[0].id;
-        window.location.href = `https://open.spotify.com/playlist/${playlistId}`
-      }));
+    this.sub.add(
+      this.playlistService
+        .getPlaylist(this.stateName, this.getToken())
+        .subscribe(res => {
+          const playlistId = res.playlists.items[0].id;
+          window.location.href = `https://open.spotify.com/playlist/${playlistId}`;
+        })
+    );
   }
 
   getToken() {
