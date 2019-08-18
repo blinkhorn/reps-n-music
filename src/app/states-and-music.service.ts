@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import countyData from '../assets/data.json';
+
+export interface StateGroup {
+  letter: string;
+  names: string[];
+}
 @Injectable({
   providedIn: 'root'
 })
 export class StatesAndMusicService {
-  state: string;
+  private state: string;
 
-  statesHash = {
+  private statesHash = {
     Alabama: 'AL',
     Alaska: 'AK',
     Arizona: 'AZ',
@@ -59,7 +64,8 @@ export class StatesAndMusicService {
     Wyoming: 'WY'
   };
 
-  counties = countyData;
+  private counties = countyData;
+
   constructor() {}
 
   setState(stateValue: string) {
@@ -76,7 +82,9 @@ export class StatesAndMusicService {
 
   getStateCounties(state: string): string[] {
     const countiesArr = Object.keys(this.counties);
-    return countiesArr.filter(item => item.substring(0, 2) === this.statesHash[state]);
+    return countiesArr.filter(
+      item => item.substring(0, 2) === this.statesHash[state]
+    );
   }
 
   getTooltipInfo(county: string): string {
@@ -100,7 +108,7 @@ export class StatesAndMusicService {
   }
 
   getRaceRatingSegment(county: string): string {
-    return this.counties[county].raceRatingSegment.replace(/-/g,' ');
+    return this.counties[county].raceRatingSegment.replace(/-/g, ' ');
   }
 
   getOpenSeat(county: string): string {
@@ -117,5 +125,22 @@ export class StatesAndMusicService {
 
   getCountyState(county: string): string {
     return this.counties[county].state;
+  }
+
+  groupByFirstLetter(): StateGroup[] {
+    const stateGroup: StateGroup[] = [{letter: '', names: [] }];
+    Object.keys(this.statesHash).forEach(k => {
+      const i = k.toString().substring(0, 1);
+      if (stateGroup[i]) {
+        stateGroup[i].push(k);
+      } else {
+        stateGroup[i] = [k];
+      }
+    });
+    stateGroup.shift(); // remove dummy item I initialized on first line of groupByFirstLetter()
+    return Object.keys(stateGroup).map(k => ({
+      letter: k,
+      names: stateGroup[k]
+    }));
   }
 }
