@@ -5,3 +5,17 @@
   display: flex;
   justify-content: center;
 }
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-title {
+  flex-shrink: 0;
+}
+
+.mat-card-content{
+  flex-grow: 1;
+  overflow: auto;
+}
