@@ -1,10 +1,12 @@
-<div class="button-group" *ngFor="let county of getStateCounties(getState())">
-  <button
-    mat-button
-    matTooltip={{getTooltipInfo(county)}}
-    [matTooltipPosition]="'right'"
-    [routerLink]="['seat-id', county]"
-  >
-    {{ county }}
-  </button>
-</div>
+<mat-card>
+  <div class="button-group" *ngFor="let county of getStateCounties(getState())">
+    <button
+      mat-button
+      matTooltip="{{ getTooltipInfo(county) }}"
+      [matTooltipPosition]="'right'"
+      [routerLink]="['seat-id', county]"
+    >
+      {{ county }}
+    </button>
+  </div>
+</mat-card>
