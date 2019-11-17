@@ -1,10 +1,10 @@
 <div class="button-group" *ngFor="let county of getStateCounties(getState())">
-    <button
-      mat-button
-      matTooltip={{getTooltipInfo(county)}}
-      [matTooltipPosition]="'right'"
-      [routerLink]="['/compare', previousCountyName, county]"
-    >
-      {{ county }}
-    </button>
-  </div>
+  <button
+    mat-button
+    matTooltip="{{ getTooltipInfo(county) }}"
+    [matTooltipPosition]="'right'"
+    [routerLink]="['/compare', getPreviousCountyName(), county]"
+  >
+    {{ county }}
+  </button>
+</div>

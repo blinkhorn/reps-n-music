@@ -4,14 +4,17 @@ import { ActivatedRoute } from '@angular/router';
 
 import { StatesAndMusicService } from '../states-and-music.service';
 import { PlaylistService } from '../playlist.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-county-display',
   templateUrl: './county-display.component.html',
   styleUrls: ['./county-display.component.css']
 })
 export class CountyDisplayComponent implements OnInit, OnDestroy {
-  countyName: string;
-  private sub: any;
+
+  private countyName: string;
+  private sub = new Subscription();
+
   constructor(
     private route: ActivatedRoute,
     private statesAndMusicService: StatesAndMusicService,
@@ -19,9 +22,11 @@ export class CountyDisplayComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.countyName = params.id;
-    });
+    this.sub.add(
+      this.route.params.subscribe(params => {
+        this.countyName = params.id;
+      })
+    );
   }
 
   getFullName(county: string): string {
@@ -57,11 +62,16 @@ export class CountyDisplayComponent implements OnInit, OnDestroy {
   }
 
   getState(): string {
-    return this.statesAndMusicService.getState();
+    const stateCode = this.countyName.substring(0, 2);
+    return this.statesAndMusicService.reverseStatesHash()[stateCode];
   }
 
   onClickMusic(): void {
     this.playlistService.authSpotifyUser(this.getState());
+  }
+
+  getCountyName(): string {
+    return this.countyName;
   }
 
   ngOnDestroy() {

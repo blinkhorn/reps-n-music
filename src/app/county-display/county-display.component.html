@@ -1,14 +1,14 @@
 <mat-card>
-  <mat-card-title>Seat ID: {{ countyName }}</mat-card-title>
+  <mat-card-title>Seat ID: {{ getCountyName() }}</mat-card-title>
   <mat-card-content>
-    <p>Full Name: {{ getFullName(countyName) }}</p>
-    <p>Party: {{ getParty(countyName) }}</p>
-    <p>Race Rating ID: {{ getRaceRatingID(countyName) }}</p>
-    <p>Rating Phrase: {{ getRatingPhrase(countyName) }}</p>
-    <p>Race Rating Segment: {{ getRaceRatingSegment(countyName) }}</p>
-    <p>Open Seat: {{ getOpenSeat(countyName) }}</p>
-    <p>Turnover: {{ getTurnover(countyName) }}</p>
-    <p>Trump Margin: {{ getTrumpMargin(countyName) }}</p>
+    <p>Full Name: {{ getFullName(getCountyName()) }}</p>
+    <p>Party: {{ getParty(getCountyName()) }}</p>
+    <p>Race Rating ID: {{ getRaceRatingID(getCountyName()) }}</p>
+    <p>Rating Phrase: {{ getRatingPhrase(getCountyName()) }}</p>
+    <p>Race Rating Segment: {{ getRaceRatingSegment(getCountyName()) }}</p>
+    <p>Open Seat: {{ getOpenSeat(getCountyName()) }}</p>
+    <p>Turnover: {{ getTurnover(getCountyName()) }}</p>
+    <p>Trump Margin: {{ getTrumpMargin(getCountyName()) }}</p>
   </mat-card-content>
   <button
     mat-raised-button
@@ -19,7 +19,7 @@
   <button
     mat-raised-button
     color="primary"
-    [routerLink]="['/compare', countyName]">
+    [routerLink]="['/compare', getCountyName()]">
     Compare Seat
   </button>
   <button

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StatesAndMusicService } from '../states-and-music.service';
 
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-county-compare-select',
   templateUrl: './county-compare-select.component.html',
@@ -9,14 +10,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CountyCompareSelectComponent implements OnInit, OnDestroy {
 
-  previousCountyName: string;
-  private sub: any;
-  constructor(private route: ActivatedRoute, private statesAndMusicService: StatesAndMusicService) { }
+  private previousCountyName: string;
+  private sub = new Subscription();
+
+  constructor(
+    private route: ActivatedRoute,
+    private statesAndMusicService: StatesAndMusicService
+  ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe( params => {
-      this.previousCountyName = params.id;
-    });
+    this.sub.add(
+      this.route.params.subscribe(params => {
+        this.previousCountyName = params.id;
+      })
+    );
   }
 
   getState(): string {
@@ -31,9 +38,11 @@ export class CountyCompareSelectComponent implements OnInit, OnDestroy {
     return this.statesAndMusicService.getTooltipInfo(county);
   }
 
+  getPreviousCountyName(): string {
+    return this.previousCountyName;
+  }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
-
 }

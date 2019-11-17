@@ -22,78 +22,19 @@ export const filterArr = (opt: string[], value: string): string[] => {
   styleUrls: ['./state-select.component.css']
 })
 export class StateSelectComponent implements OnInit {
-  state: string;
 
-  stateForm: FormGroup = this.formBuilder.group({
+  private stateForm: FormGroup = this.formBuilder.group({
     stateGroup: '',
   });
 
-  stateGroups: StateGroup[] = [{
-    letter: 'A',
-    names: ['Alabama', 'Alaska', 'Arizona', 'Arkansas']
-  }, {
-    letter: 'C',
-    names: ['California', 'Colorado', 'Connecticut']
-  }, {
-    letter: 'D',
-    names: ['Delaware']
-  }, {
-    letter: 'F',
-    names: ['Florida']
-  }, {
-    letter: 'G',
-    names: ['Georgia']
-  }, {
-    letter: 'H',
-    names: ['Hawaii']
-  }, {
-    letter: 'I',
-    names: ['Idaho', 'Illinois', 'Indiana', 'Iowa']
-  }, {
-    letter: 'K',
-    names: ['Kansas', 'Kentucky']
-  }, {
-    letter: 'L',
-    names: ['Louisiana']
-  }, {
-    letter: 'M',
-    names: ['Maine', 'Maryland', 'Massachusetts', 'Michigan',
-      'Minnesota', 'Mississippi', 'Missouri', 'Montana']
-  }, {
-    letter: 'N',
-    names: ['Nebraska', 'Nevada', 'New Hampshire', 'New Jersey',
-      'New Mexico', 'New York', 'North Carolina', 'North Dakota']
-  }, {
-    letter: 'O',
-    names: ['Ohio', 'Oklahoma', 'Oregon']
-  }, {
-    letter: 'P',
-    names: ['Pennsylvania']
-  }, {
-    letter: 'R',
-    names: ['Rhode Island']
-  }, {
-    letter: 'S',
-    names: ['South Carolina', 'South Dakota']
-  }, {
-    letter: 'T',
-    names: ['Tennessee', 'Texas']
-  }, {
-    letter: 'U',
-    names: ['Utah']
-  }, {
-    letter: 'V',
-    names: ['Vermont', 'Virginia']
-  }, {
-    letter: 'W',
-    names: ['Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
-  }];
+  private stateGroups: StateGroup[];
 
-  stateGroupOptions: Observable<StateGroup[]>;
+  private stateGroupOptions: Observable<StateGroup[]>;
 
-  constructor(private formBuilder: FormBuilder, private statesAndMusicService: StatesAndMusicService) { }
+  constructor(private formBuilder: FormBuilder, private statesAndMusicService: StatesAndMusicService) {}
 
   ngOnInit() {
+    this.stateGroups = this.statesAndMusicService.groupByFirstLetter();
     this.statesAndMusicService.setState('');
 
     this.stateGroupOptions = this.stateForm.get('stateGroup').valueChanges
@@ -121,4 +62,11 @@ export class StateSelectComponent implements OnInit {
     return this.statesAndMusicService.isValidState();
   }
 
+  getStateGroupOptions(): Observable<StateGroup[]> {
+    return this.stateGroupOptions;
+  }
+
+  getStateForm(): FormGroup {
+    return this.stateForm;
+  }
 }
