@@ -4,7 +4,7 @@ This application allows you to view data about U.S. State Representatives, compa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
-Please view the live application here: http://musical-chairs.s3-website-us-east-1.amazonaws.com/
+This application is not currently deployed.
 
 ## Development server
 
